@@ -1,0 +1,50 @@
+<html>
+<head>
+  <title>Desk Lights</title>
+  <style>
+    body {
+      -webkit-tap-highlight-color: transparent;
+      -webkit-touch-callout: none;
+    }
+    .switch {
+      position: absolute;
+      background-color: #E6E1C5;
+      width: 150px;
+      height: 300px;
+      border-radius: 10px;
+    }
+
+    .switch::before {
+      top: 10px;
+      border-radius: 10px 10px 0 0;
+      content: '';
+      width: 150px;
+      height: 150px;
+      background: #d2cdb4;
+      position: absolute;
+    }
+
+    .container {
+      margin: 0;
+      height: 100%;
+      background-color: #BCD3F2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+     }
+  </style>
+  <meta name="apple-mobile-web-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+</head>
+<body class="container">
+  <div class="switch" onclick="makeRequest()" />
+  <script type="application/javascript">
+    function makeRequest() {
+      const xhr = new XMLHttpRequest();
+      const url = 'http://tripswitch.local:8000';
+      xhr.open('POST', url);
+      xhr.send();
+    }
+  </script>
+</body>
+</html>
